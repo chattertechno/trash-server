@@ -1,0 +1,20 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "host": "@chatter-eka3c.mongodb.net",
+        "port": 27017,
+        "database": "trump",
+        "username": "renee",
+        "password": "reneekrom",
+        "srv": true
+      },
+      "options": {
+        "ssl": true
+      }
+    }
+  }
+}
