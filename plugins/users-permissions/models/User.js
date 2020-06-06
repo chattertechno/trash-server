@@ -1,6 +1,7 @@
 'use strict';
 
 const axios = require('axios');
+const stipre = require('stripe')('sk_test_51Gr7ocIeEeOYEB0wUdkA8XXDCNYxVpreQLlHR4zAVEAbqJyK2wDrhHAerh4XLv30FXNeLHzOk2RNKE6eWWRBefwq00W5o1Re6N');
 /**
  * Lifecycle callbacks for the `User` model.
  */
@@ -33,7 +34,11 @@ module.exports = {
   // Fired before `insert` query.
   beforeCreate: async (model) => {
     const cart = await axios.post('http://api.reneekrom.site/carts');
+    const customer = stripe.customers.create({
+      email: model.get('email')
+    })
     model.set('cart_id', cart.data.id);
+    model.set('customer_id', customer.id);
   },
 
   // After creating a value.
