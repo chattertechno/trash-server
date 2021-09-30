@@ -5,9 +5,9 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "@chatter-eka3c.mongodb.net",
+        "host": "@maximus.jx6x9.mongodb.net",
         "port": 27017,
-        "database": "trump",
+        "database": "server",
         "username": "renee",
         "password": "reneekrom",
         "srv": true
